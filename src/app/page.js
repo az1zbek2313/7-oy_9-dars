@@ -4,23 +4,8 @@ import hero2 from "../../public/image/hero2.webp";
 import hero3 from "../../public/image/hero3.webp";
 import hero4 from "../../public/image/hero4.webp";
 import card1 from "../../public/image/card1.webp";
-// import card2 from "../../public/image/card2.webp";
-// import card3 from "../../public/image/card3.webp";
-
-// async function getData() {
-//   const res = await fetch('https://strapi-store-server.onrender.com/api/products?featured=true', {
-//     method: 'GET',
-//     headers: {
-//         'X-API-KEY': 'ESSRH4Y-Z6AM52J-NVW1E5J-H5FM35Y'
-//     },
-//   })
-
-//   if (!res.ok) {
-//     throw new Error('Failed to fetch data')
-//   }
- 
-//   return res.json()
-// }
+import card2 from "../../public/image/card2.webp";
+import card3 from "../../public/image/card3.jpeg";
 
 export default function Home() {
   
@@ -78,13 +63,14 @@ export default function Home() {
 
       <h2 className="main--title text-3xl font-medium tracking-wider capitalize">Featured Products</h2>
       <div className="card-wrapper flex justify-between">
+      <a href="about1">
       <div
       className="cards"
     >
       <Image
         src={card1}
         alt="avant-garde lamp"
-        className="rounded-xl md:h-48 w-full object-cover card-image"
+        className="rounded-xl w-full object-cover card-image"
       ></Image>
       <div className="card-body items-center text-center mt-4">
         <h2
@@ -92,43 +78,48 @@ export default function Home() {
         >
           Avant-Garde Lamp
         </h2>
-        <span className="text-secondary textTrack">$5999</span>
+        <span className="text-secondary textTrack">$179.99</span>
       </div>
     </div>
+      </a>
+      <a href="about2">
       <div
       className="cards"
     >
       <Image
-        src={card1}
+        src={card2}
         alt="avant-garde lamp"
-        className="rounded-xl h-64 md:h-48 w-full object-cover card-image"
+        className="rounded-xl h-64 w-full object-cover card-image"
       ></Image>
       <div className="card-body items-center text-center mt-4">
         <h2
           className="card-title capitalize tracking-wide tracking"
         >
-          Avant-Garde Lamp
+          Cofee Table
         </h2>
-        <span className="text-secondary textTrack">$5999</span>
+        <span className="text-secondary textTrack">$179.99</span>
       </div>
     </div>
+      </a>
+      <a href="about3">
       <div
       className="cards"
     >
       <Image
-        src={card1}
+        src={card3}
         alt="avant-garde lamp"
-        className="rounded-xl h-64 md:h-48 w-full object-cover card-image"
+        className="rounded-xl h-64 w-full object-cover card-image"
       ></Image>
       <div className="card-body items-center text-center mt-4">
         <h2
           className="card-title capitalize tracking-wide tracking"
         >
-          Avant-Garde Lamp
+          Comfy Bed
         </h2>
-        <span className="text-secondary textTrack">$5999</span>
+        <span className="text-secondary textTrack">$129.99</span>
       </div>
     </div>
+      </a>
       </div>
     </main>
 
