@@ -1,5 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import dark from '../../public/image/dark.png'
+import cart from '../../public/image/cart.jpg'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +14,125 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="header">
+          <div className="align-element header--container flex justify-center mx-auto sm:justify-end">
+            <div className="flex gap-x-2 sm:gap-x-8 items-center">
+              <p className="text-xs sm:text-sm opacity">Hello, demo user</p>
+              <button className="bg-transparent text-xs hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-3 border border-blue-500 hover:border-transparent rounded-lg">
+                LOGOUT
+              </button>
+            </div>
+          </div>
+        </header>
+        <nav className="bg-blue-200 py-2">
+          <div className=" nav--container flex align-element">
+            <div className="navbar-start">
+              <a
+                aria-current="page"
+                className="btn btn-primary text-3xl items-center active logo"
+                href="/"
+              >
+                C
+              </a>
+              <div className="dropdown bg-white">
+                <label tabindex="0" className="btn btn-ghost lg:hidden">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    className="h-6 w-6"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path>
+                  </svg>
+                </label>
+                <ul
+                  tabindex="0"
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
+                >
+                  <li>
+                    <a
+                      aria-current="page"
+                      className="capitalize active"
+                      href="/"
+                    >
+                      home
+                    </a>
+                  </li>
+                  <li>
+                    <a className="capitalize" href="/about">
+                      about
+                    </a>
+                  </li>
+                  <li>
+                    <a className="capitalize" href="/products">
+                      products
+                    </a>
+                  </li>
+                  <li>
+                    <a className="capitalize" href="/cart">
+                      cart
+                    </a>
+                  </li>
+                  <li>
+                    <a className="capitalize" href="/checkout">
+                      checkout
+                    </a>
+                  </li>
+                  <li>
+                    <a className="capitalize" href="/orders">
+                      orders
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="navbar-center  lg:flex">
+              <ul className="menu menu-horizontal">
+                <li id="list">
+                  <a className="capitalize active" href="/" aria-current="page">
+                    home
+                  </a>
+                </li>
+                <li id="list">
+                  <a className="capitalize" href="/about">
+                    about
+                  </a>
+                </li>
+                <li id="list">
+                  <a className="capitalize" href="/products">
+                    products
+                  </a>
+                </li>
+                <li id="list">
+                  <a className="capitalize" href="/cart">
+                    cart
+                  </a>
+                </li>
+                <li id="list">
+                  <a className="capitalize" href="/checkout">
+                    checkout
+                  </a>
+                </li>
+                <li id="list">
+                  <a className="capitalize" href="/orders">
+                    orders
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="navbar-end flex gap-3">
+              <Image src={dark} width={32} className="rounded-md cursor-pointer"/>
+              <Image src={cart} width={32} className="rounded-md cursor-pointer"/>
+            </div>
+          </div>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }

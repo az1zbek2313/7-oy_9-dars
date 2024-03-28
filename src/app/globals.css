@@ -1,9 +1,160 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root{
+  --text-color: rgba(2, 29, 72, 0.8);
+  ;
+}
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.header{
+  background:hsl(217, 92%, 10%);
+  color: white;
+}
+.header--container{
+  max-width: 1150px;
+  height: 40px;
+}
+.opacity{
+  opacity: 0.8;
+}
+.logo{
+  color: rgb(255, 255, 255, 0.8);
+  background:rgb(5, 122, 255);
+  width: 46px;
+  padding: 8px 16px;
+  border-radius:10px;
+  margin-top: 100px;
+  font-weight: 600;
+}
+.logo:hover + .dropdown{
+  display: block;
+}
+.dropdown{
+  display: none;
+  top: 102px;
+  position: absolute;
+  z-index: 1000;
+  box-shadow: 0 0 1.5px 1.5px grey;
+  border-radius:10px;
+}
+.dropdown:hover{
+  display: block;
+}
+.dropdown ul li:hover{
+  background:rgb(198, 196, 196);
+  border-radius: 4px;
+}
+.nav--container{
+  max-width: 1150px;
+  height: 52px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-center .menu{
+  display: flex;
+  gap: 16px;
+}
+.navbar-center .menu li{
+  padding: 8px 12px;
+  border-radius:10px;
+}
+.navbar-center .menu li:hover{
+  background:black;
+  color: white;
+}
+.notfound h1{
+  margin: 0 auto;
+  margin-top: 200px;
+}
+.notfound h1 div{
+ width: 50vw;
+}
+.notfound h1 div p{
+  text-align: center;
+}
+.notfound h1 div a{
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+}
+.main--container{
+  max-width: 1150px;
+  margin: 0 auto;
+}
+.hero h1{
+  color: var(--text-color);
+}
+.btn-products{
+  background:rgb(5, 122, 255);
+  border-radius:10px;
+  padding:12px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color:rgb(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+.CAROUSEL {
+  border-radius:20px;
+  background:black;
+  overflow-x: auto; 
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  -webkit-overflow-scrolling: touch; 
+}
+
+.CAROUSEL::-webkit-scrollbar {
+  display: none; 
+}
+
+.CAROUSEL .carousel-item {
+  flex: 0 0 auto; 
+  scroll-snap-align: start; 
+}
+.CAROUSEL .carousel-item .object-cover{
+  border-radius:12px;
+}
+.main--title{
+  margin-top: 100px;
+  font-weight: 600;
+  font-size: 32px;
+  border-bottom: 1px solid rgba(198, 196, 196, 0.8);
+  padding-bottom: 16px;
+  margin-bottom: 60px;
+  color:var(--text-color);
+}
+
+.card-image{
+  border-radius: 16px;
+  width :100%;
+  height: 240px;
+  object-fit: cover;
+}
+.cards{
+  width: 354px;
+  cursor: pointer;
+  padding: 12px 14px; 
+  border-radius: 16px;
+  box-shadow: 0 0 8px lightgrey;
+  margin-bottom: 30px;}
+.cards:hover{
+  box-shadow: 0 0 18px rgb(181, 180, 180);
+}
+.tracking{
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  color:var(--text-color);
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.textTrack{
+  color: var(--text-color);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
